@@ -1,7 +1,7 @@
 import './App.css';
 import Nav from './components/Nav';
 import Stats from './components/Stats';
-// import TaskList from './components/TaskList';
+import TaskList from './components/TaskList';
 
 function App() {
   return (
@@ -11,29 +11,7 @@ function App() {
         <div className="container">
 
           <Nav />
-          {/* <TaskList /> */}
-          <form>
-            <h2 className="form-title">Add Task</h2>
-            <input
-              type="text"
-              className="input input__lg"
-              name="text"
-              autoComplete="off"
-              placeholder="Task Name"
-            />
-
-            <input
-              type="text"
-              className="input input__lg"
-              name="text"
-              placeholder="Task Description"
-              autoComplete="off"
-            />
-
-            <button type="submit" className="btn">
-              Add
-            </button>
-          </form>
+          <TaskList />
           <hr />
 
           <Stats />
