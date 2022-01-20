@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import propTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = ({ toggle, mode }) => {
   const location = useLocation();
+
+  useEffect(() => {
+    document.body.className = mode;
+  });
 
   return (
     <div className="nav">
@@ -11,7 +16,7 @@ const Nav = () => {
           <>
             <div className="header-title">Tasks</div>
             <div className="icons">
-              <div className="add-icon">N</div>
+              <button type="button" className="add-icon" onClick={() => toggle()}>N</button>
               <Link to="/addTask" className="night-mode">+</Link>
             </div>
           </>
@@ -29,6 +34,11 @@ const Nav = () => {
     </div>
 
   );
+};
+
+Nav.propTypes = {
+  toggle: propTypes.func.isRequired,
+  mode: propTypes.string.isRequired,
 };
 
 export default Nav;
