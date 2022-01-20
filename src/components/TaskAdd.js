@@ -2,7 +2,6 @@ import React from 'react';
 
 const TaskAdd = () => (
   <form>
-    <h2 className="form-title">Add Task</h2>
     <input
       type="text"
       className="task-input"

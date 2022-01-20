@@ -1,7 +1,9 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
-import Stats from './components/Stats';
 import TaskList from './components/TaskList';
+import TaskAdd from './components/TaskAdd';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -11,10 +13,11 @@ function App() {
         <div className="container">
 
           <Nav />
-          <TaskList />
-          <hr />
-
-          <Stats />
+          <Routes>
+            <Route path="/" element={<TaskList />} />
+            <Route path="/addTask" element={<TaskAdd />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
 
         </div>
       </div>
