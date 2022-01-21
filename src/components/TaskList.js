@@ -1,60 +1,41 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
+import propTypes from 'prop-types';
 import Stats from './Stats';
 
-const TaskList = () => (
+const TaskList = ({ tasks }) => (
   <>
     <ul className="task-list">
-      <li className="task stack-small">
-        <div className="avatar">
-          A
-        </div>
+      {
+        tasks.map((task) => (
 
-        <div className="task-td">
-          <div className="task-title">Task 1 Name</div>
-          <div className="task-description">Any meal of the day</div>
-        </div>
+          <li className="task stack-small" key={task.id}>
 
-        <div className="cb">
-          <input id="todo-0" type="checkbox" defaultChecked />
-        </div>
+            <div className="avatar">
+              A
+            </div>
 
-      </li>
+            <div className="task-td">
+              <div className="task-title">{task.name}</div>
+              <div className="task-description">{task.description}</div>
+            </div>
 
-      <li className="task stack-small">
-        <div className="avatar">
-          A
-        </div>
+            <div className="cb">
+              <input id="todo-0" type="checkbox" defaultChecked={task.complete} />
+            </div>
 
-        <div className="task-td">
-          <div className="task-title">Task 2 Name</div>
-          <div className="task-description">Double GDP Assesment</div>
-        </div>
+          </li>
+        ))
+      }
 
-        <div className="cb">
-          <input id="todo-0" type="checkbox" defaultChecked />
-        </div>
-
-      </li>
-
-      <li className="task stack-small">
-        <div className="avatar">
-          A
-        </div>
-
-        <div className="task-td">
-          <div className="task-title">Task 3 Name</div>
-          <div className="task-description">Nap or night time.</div>
-        </div>
-
-        <div className="cb">
-          <input id="todo-0" type="checkbox" defaultChecked />
-        </div>
-
-      </li>
     </ul>
     <hr />
     <Stats />
   </>
 );
+
+TaskList.propTypes = {
+  tasks: propTypes.array.isRequired,
+};
 
 export default TaskList;
