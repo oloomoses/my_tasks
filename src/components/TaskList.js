@@ -3,10 +3,26 @@ import React from 'react';
 import propTypes from 'prop-types';
 import Stats from './Stats';
 
-const TaskList = ({ tasks }) => (
-  <>
-    <ul className="task-list">
-      {
+const TaskList = ({ tasks, updateTask }) => {
+  const toggleTaskComplete = (id) => {
+    const updatedTask = tasks.map((task) => {
+      if (id === task.id) {
+        return {
+          ...task,
+          complete: !task.complete,
+          completedTime: new Date().toLocaleTimeString(),
+        };
+      }
+      return task;
+    });
+
+    updateTask(updatedTask);
+  };
+
+  return (
+    <>
+      <ul className="task-list">
+        {
         tasks.map((task) => (
 
           <li className="task stack-small" key={task.id}>
@@ -21,21 +37,28 @@ const TaskList = ({ tasks }) => (
             </div>
 
             <div className="cb">
-              <input id="todo-0" type="checkbox" defaultChecked={task.complete} />
+              {task.complete ? (
+                <div className="completed-time">{task.completedTime}</div>
+              ) : (
+                <input id="todo-0" type="checkbox" defaultChecked={task.complete} onChange={() => toggleTaskComplete(task.id)} />
+              )}
+
             </div>
 
           </li>
         ))
       }
 
-    </ul>
-    <hr />
-    <Stats />
-  </>
-);
+      </ul>
+      <hr />
+      <Stats />
+    </>
+  );
+};
 
 TaskList.propTypes = {
   tasks: propTypes.array.isRequired,
+  updateTask: propTypes.func.isRequired,
 };
 
 export default TaskList;
