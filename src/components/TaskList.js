@@ -1,9 +1,10 @@
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Stats from './Stats';
 
 const TaskList = ({ tasks, updateTask }) => {
+  const openTasks = tasks.filter((task) => (task.complete === false)).length;
+  const closedTasks = tasks.filter((task) => (task.complete === true)).length;
   const toggleTaskComplete = (id) => {
     const updatedTask = tasks.map((task) => {
       if (id === task.id) {
@@ -18,7 +19,7 @@ const TaskList = ({ tasks, updateTask }) => {
 
     updateTask(updatedTask);
   };
-
+  // console.log(openTasks.length);
   return (
     <>
       <ul className="task-list">
@@ -60,14 +61,22 @@ const TaskList = ({ tasks, updateTask }) => {
 
       </ul>
       <hr />
-      <Stats />
+      <Stats openTasks={openTasks} closedTasks={closedTasks} />
     </>
   );
 };
 
 TaskList.propTypes = {
-  tasks: propTypes.array.isRequired,
-  updateTask: propTypes.func.isRequired,
+  tasks: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    complete: PropTypes.bool.isRequired,
+    completedTime: PropTypes.string.isRequired,
+
+  })).isRequired,
+  updateTask: PropTypes.func.isRequired,
 };
 
 export default TaskList;
