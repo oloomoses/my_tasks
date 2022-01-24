@@ -19,7 +19,7 @@ const TaskList = ({ tasks, updateTask }) => {
 
     updateTask(updatedTask);
   };
-  // console.log(openTasks.length);
+
   return (
     <>
       <ul className="task-list">
