@@ -28,7 +28,16 @@ const TaskList = ({ tasks, updateTask }) => {
           <li className="task stack-small" key={task.id}>
 
             <div className="avatar">
-              A
+              <img
+                src={task.avatar}
+                alt="A"
+                className="avatar-img"
+                onError={(e) => {
+                  if (e.target.src !== 'CE6.png') {
+                    e.target.src = 'CE6.png';
+                  }
+                }}
+              />
             </div>
 
             <div className="task-td">

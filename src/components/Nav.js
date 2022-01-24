@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import propTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
+import Brightness4SharpIcon from '@mui/icons-material/Brightness4Sharp';
+import AddIcon from '@mui/icons-material/Add';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 const Nav = ({ toggle, mode }) => {
   const location = useLocation();
@@ -16,8 +19,8 @@ const Nav = ({ toggle, mode }) => {
           <>
             <div className="header-title">Tasks</div>
             <div className="icons">
-              <button type="button" className="add-icon" onClick={() => toggle()}>N</button>
-              <Link to="/addTask" className="night-mode">+</Link>
+              <Brightness4SharpIcon className="night-mode" onClick={() => toggle()} />
+              <Link to="/addTask"><AddIcon className="add-icon" /></Link>
             </div>
           </>
 
@@ -26,7 +29,11 @@ const Nav = ({ toggle, mode }) => {
           <>
             <div className="header-title">Add Task</div>
             <div className="icons">
-              <Link to="/" className="night-mode"> Back </Link>
+              <Link to="/">
+                {' '}
+                <ArrowBackIosNewIcon className="back" />
+                {' '}
+              </Link>
             </div>
           </>
         )

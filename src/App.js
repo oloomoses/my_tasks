@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import './App.css';
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
@@ -10,13 +9,13 @@ import NotFound from './components/NotFound';
 
 const DATA = [
   {
-    id: 1, name: 'Task name 1', description: 'task name 1 description', complete: false, completedTime: '',
+    id: 1, name: 'Task name 1', description: 'task name 1 description', avatar: '', complete: false, completedTime: '',
   },
   {
-    id: 2, name: 'Task name 2', description: 'task name 2 description', complete: true, completedTime: '',
+    id: 2, name: 'Task name 2', description: 'task name 2 description', avatar: '', complete: false, completedTime: '',
   },
   {
-    id: 3, name: 'Task name 3', description: 'task name 3 description', complete: false, completedTime: '',
+    id: 3, name: 'Task name 3', description: 'task name 3 description', avatar: '', complete: false, completedTime: '',
   },
 ];
 
@@ -24,13 +23,11 @@ function App() {
   const [mode, setMode] = useState('light');
   const [tasks, setTasks] = useState(DATA);
 
-  const modeToggle = () => {
-    mode === 'light' ? setMode('dark') : setMode('light');
-  };
+  const modeToggle = () => (mode === 'light' ? setMode('dark') : setMode('light'));
 
-  const addTask = (name, description) => {
+  const addTask = (name, description, avatar) => {
     const newTask = {
-      id: `id-${nanoid()}`, name, description, complete: false, completedTime: '',
+      id: `id-${nanoid()}`, name, description, avatar, complete: false, completedTime: '',
     };
     setTasks([...tasks, newTask]);
   };
