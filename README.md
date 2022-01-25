@@ -1,15 +1,7 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
-<!-- PROJECT LOGO -->
-<br />
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-A simple task list
+A simple task list app.
+
 The main features of this app are:
 - View tasks
 - Add new tasks
