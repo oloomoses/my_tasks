@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    autoComplete="off"
+    className="task-input"
+    name="text"
+    onChange={[Function]}
+    placeholder="Task Name"
+    required={true}
+    type="text"
+    value=""
+  />
+  <input
+    autoComplete="off"
+    className="task-input"
+    name="text"
+    onChange={[Function]}
+    placeholder="Task Description"
+    required={true}
+    type="text"
+    value=""
+  />
+  <input
+    autoComplete="off"
+    className="task-input"
+    name="text"
+    onChange={[Function]}
+    placeholder="Avatar url"
+    type="text"
+    value=""
+  />
+  <button
+    className="btn"
+    type="submit"
+  >
+    ADD
+  </button>
+</form>
+`;

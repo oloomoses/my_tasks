@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+Array [
+  <ul
+    className="task-list"
+  />,
+  <hr />,
+  <div
+    className="stats-title"
+  >
+    Stats
+  </div>,
+  <ul
+    className="stats"
+  >
+    <li
+      className="stat stack-small"
+    >
+      <div
+        className="stat-value"
+      >
+        0
+      </div>
+      <div
+        className="stat-description"
+      >
+        Total Tasks Closed
+      </div>
+    </li>
+    <li
+      className="stat stack-small"
+    >
+      <div
+        className="stat-value"
+      >
+        0
+      </div>
+      <div
+        className="stat-description"
+      >
+        Total Tasks Open
+      </div>
+    </li>
+    <li
+      className="stat stack-small"
+    >
+      <div
+        className="stat-value"
+      >
+        NaN
+        %
+      </div>
+      <div
+        className="percentage-description"
+      >
+        Completion Rate
+      </div>
+    </li>
+  </ul>,
+]
+`;

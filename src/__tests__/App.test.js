@@ -1,5 +1,6 @@
 import { shallow } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
+import renderer from 'react-test-renderer';
 import App from '../App';
 
 let wrapper;
@@ -21,4 +22,9 @@ test('renders AddTask component', () => {
 
 test('renders NotFound component', () => {
   expect(wrapper.find('NotFound')).toBeTruthy();
+});
+
+it('matches the snapshot', () => {
+  const tree = renderer.create(<BrowserRouter><App /></BrowserRouter>).toJSON();
+  expect(tree).toMatchSnapshot();
 });

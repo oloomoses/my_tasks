@@ -9,13 +9,13 @@ import NotFound from './components/NotFound';
 
 const DATA = [
   {
-    id: '1', name: 'Task name 1', description: 'task name 1 description', avatar: '', complete: false, completedTime: '',
+    id: '1', name: 'Workout', description: 'Weight lifting', avatar: '', complete: false, completedTime: '',
   },
   {
-    id: '2', name: 'Task name 2', description: 'task name 2 description', avatar: '', complete: false, completedTime: '',
+    id: '2', name: 'Shopping', description: 'Buy groceries', avatar: '', complete: false, completedTime: '',
   },
   {
-    id: '3', name: 'Task name 3', description: 'task name 3 description', avatar: '', complete: false, completedTime: '',
+    id: '3', name: 'Study', description: 'Codding challenges', avatar: '', complete: false, completedTime: '',
   },
 ];
 
